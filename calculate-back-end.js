@@ -28,7 +28,13 @@
 //   return error
 // }
 // }
-//CAUSE YOU SAID DONT USE EVAL()
+
+
+
+//CAUSE  EVAL() is evil SAID DONT USE
+
+
+
 
 calculate = (x,y,sign,sign2) => {
   
@@ -69,16 +75,35 @@ calculate = (x,y,sign,sign2) => {
     case 'mod' :
         total = x % y
         break
-  } if (typeof total === 'number' && typeof sign2 === 'string') {
+  }
+
+// --------------------------------------------------
+
+
+   if (typeof total === 'number' && typeof sign2 === 'string') {
     return x + ' ' + sign + ' ' + sign2 + ' ' + y + ' equals' + ' ' + total
 
   } else if (typeof total === 'number' && sign2 === undefined){
     return x + ' ' + sign +  ' ' + y + ' equals' + ' ' + total
   }
+
+//-----------------------------------------------------
+
+
+// if (typeof total === 'number') {
+//     return total
+//   }
+
+
+/-------------------------------------------------------
+
+
   else{
     return `Sorry, that's not a mathematical operation!`
   }
 }
+
+// even if you make the return just numbers, it will still fail npm test. refer to line 93
 
 /********************************************
  * CODE DOWN HERE IS FOR INTERNAL USE ONLY. *
