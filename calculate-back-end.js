@@ -1,6 +1,34 @@
 /******************
  * YOUR CODE HERE *
  ******************/
+// calculate = (num,num2,oper) => {
+// const error = `Sorry, that's not a mathematical operation!`
+// if (oper === 'minus' || oper ==='subtracted from' || oper === '-'){
+//   oper = '-'
+// }if(oper === 'x' || oper === 'times'|| oper === 'X' || oper === 'multiplied by'){
+//     oper = '*'
+// }if(oper === 'plus'|| oper === 'added to'){
+//   oper = '+'
+// }if(oper === 'modulus' || oper === 'mod'){
+//   oper = '%'
+// }if (oper === 'divided by'){
+//   oper = '/'
+// }else if (oper !== '+' && oper !== '*' && oper !== '%' && oper !=='/' && oper !== '-'){
+//   return error
+// }
+
+// const total = eval(num + oper + num2)
+// const revTotal = num2 - num
+
+// if (oper === 'x') {
+//   return revTotal
+// }if (typeof oper == 'string' ) {
+//   return total
+// }else {
+//   return error
+// }
+// }
+//CAUSE YOU SAID DONT USE EVAL()
 
 calculate = (x,y,sign,sign2) => {
   
@@ -30,19 +58,24 @@ calculate = (x,y,sign,sign2) => {
     case 'times' :
     case 'X' :
     case 'multiplied by' :
+    case 'x' :
       total = x * y
       break
-    case 'x' :
-      total = y - x
-      break
+    // case 'x' :
+    //   total = y - x
+    //   break
     case '%' :
     case 'modulus' :
     case 'mod' :
         total = x % y
         break
-  } if (typeof total === 'number') {
+  } if (typeof total === 'number' && typeof sign2 === 'string') {
     return x + ' ' + sign + ' ' + sign2 + ' ' + y + ' equals' + ' ' + total
-  }else{
+
+  } else if (typeof total === 'number' && sign2 === undefined){
+    return x + ' ' + sign +  ' ' + y + ' equals' + ' ' + total
+  }
+  else{
     return `Sorry, that's not a mathematical operation!`
   }
 }
