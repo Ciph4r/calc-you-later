@@ -49,7 +49,7 @@ calculate = (x,y,sign,sign2) => {
     case '+' :
     case 'plus' :
     case 'added to' :
-      total = x + y
+      total = Number(x) + Number(y)
       break
     case '-' :
     case 'minus' :
@@ -80,19 +80,19 @@ calculate = (x,y,sign,sign2) => {
 // --------------------------------------------------
 
 
-  //  if (typeof total === 'number' && typeof sign2 === 'string') {
-  //   return x + ' ' + sign + ' ' + sign2 + ' ' + y + ' equals' + ' ' + total
+   if (typeof total === 'number' && typeof sign2 === 'string') {
+    return x + ' ' + sign + ' ' + sign2 + ' ' + y + ' equals' + ' ' + total
 
-  // } else if (typeof total === 'number' && sign2 === undefined){
-  //   return x + ' ' + sign +  ' ' + y + ' equals' + ' ' + total
-  // }
+  } else if (typeof total === 'number' && sign2 === undefined){
+    return x + ' ' + sign +  ' ' + y + ' equals' + ' ' + total
+  }
 
 //-----------------------------------------------------
 
 
-if (typeof total === 'number') {
-    return total
-  }
+// if (typeof total === 'number') {
+//     return total
+//   }
 
 
 //-------------------------------------------------------

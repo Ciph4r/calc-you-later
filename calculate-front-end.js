@@ -78,15 +78,22 @@ const calculate = require('./calculate-back-end.js')
 
 // Take the return value from the previous step and print it back out to the user.
 
-if (process.argv[3] === undefined){
-const x = process.argv[1]
-const y = process.argv[3]
-const sign = process.argv[2]
-}else {
-    const x = process.argv[1]
-    const y = process.argv[4]
-    const sign = process.argv[2]
-    const sign2 = process.argv[3]
+
+
+
+let x = process.argv[2]
+let y = process.argv[5]
+let sign = process.argv[3]
+let sign2 = process.argv[4]
+if (process.argv[5] === undefined){
+  x = process.argv[2]
+  y = process.argv[4]
+  sign = process.argv[3]
+  sign2 = process.argv[5]
 }
 
+
+const result = calculate(x,y,sign,sign2);
+
+console.log(result)
 
